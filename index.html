@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO KHOA</title>
+    <link rel="stylesheet" href="GIAODIEN.CSS" />
+  </head>
+  <body>
+    <!-- ================= MENU BAR ================ -->
+<nav class="navbar">
+  <a href="#" class="logo">
+  <img src="./assest/logo.png" alt="KHOA LOGO" class="logo-img">
+</a>
+
+
+  <ul class="nav-links">
+    <li><a href="#gamep1">Giới Thiệu</a></li>
+    <li><a href="#shortvideo">Sản phẩm</a></li>
+    <li><a href="#openyt-button">Chi tiết</a></li>
+
+  </ul>
+</nav>
+
+
+<!-- ==============================loader========================== -->
+    <div id="choxiu">
+      <span class="loader"></span>
+    </div>
+<!-- ===========================phan thân ====================== -->
+    <div id="main-content">
+
+      <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/intro1.mp4" type="video/mp4" />
+        </video>
+
+      <video autoplay loop muted class="fullpage-img" id="gamep1">
+        <source src="./assest/gamep1.mp4" type="video/mp4" />
+        </video>
+
+       <div class="img-wrapper">
+    <img src="./assest/gamep2.png" class="fullpage-img" id="gamep2" alt="" />
+    <!-- ======================nút tải CV====================== -->
+   <a href="./assest/CV.png" download="CV_HUỲNH ĐĂNG KHOA.png" class="button-1">
+    <span class="button-1-shadow"></span>
+    <span class="button-1-edge"></span>
+    <span class="button-1-front text">TẢI CV</span>
+</a>
+</div>
+
+       <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/line logo.mp4" type="video/mp4" />
+        </video>
+
+        <video autoplay loop muted class="fullpage-img" id="shortvideo">
+        <source src="./assest/short video.mp4" type="video/mp4" />
+        </video>
+
+        <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/VS LED.mp4" type="video/mp4" />
+        </video>
+
+        <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/TVC EVENT.mp4" type="video/mp4" />
+        </video>
+
+        <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/VS MV.mp4" type="video/mp4" />
+        </video>
+
+        <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/MOTION.mp4" type="video/mp4" />
+        </video>
+
+        <div class="openyt">
+          <video autoplay loop muted class="fullpage-img">
+        <source src="./assest/3d vfx.mp4" type="video/mp4" />
+        </video>
+        <a href="https://www.youtube.com/@Khanin176" 
+   target="_blank" 
+  class="button-40"
+  id="openyt-button"
+   role="button">
+  <span class="text">OPEN</span>
+</a>
+        </div>
+        
+        <img src="./assest/thank.jpg" class="fullpage-img" id="thank" alt="" />
+      </img>
+    </div>
+
+    <script>
+window.addEventListener("load", () => {
+    const loader = document.getElementById("choxiu");
+
+    // thời gian loader muốn chạy (tự chỉnh)
+    const delay = 5000; // 4 giây – đổi số tuỳ ý bro
+
+    // Set transition cho fade-out đẹp
+    loader.style.transition = "opacity 0.6s";
+
+    setTimeout(() => {
+        // Mờ dần loader
+        loader.style.opacity = "0";
+
+        // Chờ fade-out xong mới ẩn hoàn toàn
+        setTimeout(() => {
+            loader.style.display = "none";
+
+            // 👉 Về đầu trang NGAY LẬP TỨC
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant" // không animation để nó nhảy thẳng lên đầu
+            });
+
+        }, 600); // thời gian fade-out
+    }, delay);
+});
+
+
+</script>
+
+<script>
+// smooth scroll cho các nút menu
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    // Nếu là logo → scroll top
+    if (this.classList.contains("logo")) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Các link khác → scroll tới section
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+</script>
+<script>
+  // Chỉ áp dụng offset cho nút "Chi tiết"
+const chitietBtn = document.querySelector('a[href="#openyt-button"]');
+
+chitietBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const target = document.querySelector("#openyt-button");
+  const offset = 500; // 👉 chỉnh cao/thấp tại đây
+
+  const position =
+    target.getBoundingClientRect().top +
+    window.pageYOffset -
+    offset;
+
+  window.scrollTo({
+    top: position,
+    behavior: "smooth",
+  });
+});
+
+</script>
+  </body>
+</html>

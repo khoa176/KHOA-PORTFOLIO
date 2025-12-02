@@ -1,0 +1,292 @@
+/* ===============================phần body web============================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fullpage-img {
+  width: 100%; /* full chiều ngang mọi màn hình */
+  height: auto; /* giữ nguyên tỷ lệ ảnh */
+  display: block; /* loại bỏ khoảng trắng dưới hình */
+  object-fit: cover;
+}
+/* =======================nut vi tri================ */
+.img-wrapper {
+  position: relative; /* Bắt buộc để chứa absolute bên trong */
+}
+.img-wrapper img {
+  width: 100%;
+  display: block;
+}
+.button-1 {
+  position: absolute; /* 👉 CHÍNH LÀ DÒNG BẠN CẦN */
+  bottom: 15%; /* chỉnh vị trí theo nhu cầu */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/*================================ nut===================== */
+.button-1 {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.button-1-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(227, 100%, 16%) 0%,
+    hsl(226, 100%, 31%) 8%,
+    hsl(224, 100%, 51%) 92%,
+    hsl(239, 100%, 16%) 100%
+  );
+}
+
+.button-1-front {
+  display: block;
+  position: relative;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: bolder;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  background: hsla(232, 83%, 44%, 0.959);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-1-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-1:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-1:hover .button-1-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button-1:active .button-1-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-1:hover .button-1-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button-1:active .button-1-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-1:focus:not(:focus-visible) {
+  outline: none;
+}
+/* =======================nut vi tri YT================ */
+.openyt {
+  position: relative; /* Bắt buộc để chứa absolute bên trong */
+}
+.openyt {
+  width: 100%;
+  display: block;
+}
+.button-40 {
+  position: absolute; /* 👉 CHÍNH LÀ DÒNG BẠN CẦN */
+  bottom: 8%; /* chỉnh vị trí theo nhu cầu */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+/* ==============================nut open YT=============================== */
+.button-40 {
+  --glow-color: rgb(176, 226, 255);
+  --glow-spread-color: rgba(32, 47, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(0, 72, 159);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 2em;
+  color: var(--glow-color);
+  font-size: 25px;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+
+  transition: all 0.3s;
+}
+
+.button-40::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.button-40:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.button-40:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/* ===================================cho xiu load dza=================================== */
+#choxiu {
+  background-color: #000017;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    165deg,
+    rgb(23, 0, 123) 0%,
+    rgb(0, 76, 255) 40%,
+    rgb(0, 102, 255) 98%,
+    rgb(10, 10, 10) 100%
+  );
+  border-radius: 50%;
+  position: relative;
+}
+
+.loader:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border-bottom: 0 solid #ffffff05;
+  box-shadow: 0 -10px 20px 20px #1289ff40 inset,
+    0 -5px 15px 10px #1289ff40 inset, 0 -2px 5px #ffffff80 inset,
+    0 -3px 2px #6872ffbb inset, 0 2px 0px #0023a5, 0 2px 3px #0023a5,
+    0 5px 5px #4971ff90, 0 10px 15px #1289ff40, 0 10px 20px 20px #1289ff40;
+  filter: blur(3px);
+  animation: 2s rotate linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ================= MENU BAR ================== */
+.navbar {
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+/* ======== LOGO IMAGE STYLE ======== */
+.logo img,
+.logo-img {
+  height: 80px; /* chỉnh kích thước logo */
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s;
+  margin: 10;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* giảm khoảng cách giữa các nút */
+  list-style: none;
+  margin-right: 70px; /* kéo cả group nút sang trái */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00a6ff;
+  text-shadow: 0 0 10px #00a6ff;
+}
