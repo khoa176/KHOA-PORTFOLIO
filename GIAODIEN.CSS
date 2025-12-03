@@ -168,7 +168,7 @@ video {
 }
 .button-40 {
   position: absolute; /* 👉 CHÍNH LÀ DÒNG BẠN CẦN */
-  bottom: 8%; /* chỉnh vị trí theo nhu cầu */
+  bottom: 30%; /* chỉnh vị trí theo nhu cầu */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -182,8 +182,8 @@ video {
   border: 0.25em solid var(--glow-color);
   padding: 1em 2em;
   color: var(--glow-color);
-  font-size: 25px;
-  font-style: normal;
+  font-size: 20px;
+  font-style: bold;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -320,8 +320,8 @@ video {
   color: white;
   text-decoration: none;
   font-size: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 600;
+  font-family: Arial;
+  font-weight: 300;
   transition: 0.3s;
 }
 

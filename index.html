@@ -17,7 +17,7 @@
   <ul class="nav-links">
     <li><a href="#gamep1">Giới Thiệu</a></li>
     <li><a href="#shortvideo">Sản phẩm</a></li>
-    <li><a href="#openyt-button">Chi tiết</a></li>
+    <li><a href="#chitiet">Chi tiết</a></li>
 
   </ul>
 </nav>
@@ -33,7 +33,10 @@
       <video class="fullpage-video"
     autoplay 
     muted 
-    loop >
+    loop 
+    playsinline 
+    webkit-playsinline
+    preload="auto">
         <source src="./assest/intro11.mp4" type="video/mp4" />
         </video>
 
@@ -117,7 +120,7 @@
         <source src="./assest/MOTION1.mp4" type="video/mp4" />
         </video>
 
-        <div class="openyt">
+        <div >
           <video class="fullpage-video"
     autoplay 
     muted 
@@ -127,15 +130,19 @@
     preload="auto">
         <source src="./assest/3d vfx.mp4" type="video/mp4" />
         </video>
-        <a href="https://www.youtube.com/@Khanin176" 
+        
+        </div>
+      <div class="openyt">
+<img src="./assest/chitiet.png" class="fullpage-img" id="chitiet" alt="" />
+<a href="https://www.youtube.com/@Khanin176" 
    target="_blank" 
   class="button-40"
   id="openyt-button"
    role="button">
   <span class="text">OPEN</span>
 </a>
-        </div>
-        
+      </div> 
+      </img>
         <img src="./assest/thank.jpg" class="fullpage-img" id="thank" alt="" />
       </img>
     </div>
@@ -190,28 +197,6 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
   });
 });
-</script>
-<script>
-  // Chỉ áp dụng offset cho nút "Chi tiết"
-const chitietBtn = document.querySelector('a[href="#openyt-button"]');
-
-chitietBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-
-  const target = document.querySelector("#openyt-button");
-  const offset = 500; // 👉 chỉnh cao/thấp tại đây
-
-  const position =
-    target.getBoundingClientRect().top +
-    window.pageYOffset -
-    offset;
-
-  window.scrollTo({
-    top: position,
-    behavior: "smooth",
-  });
-});
-
 </script>
   </body>
 </html>
