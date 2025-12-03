@@ -317,15 +317,16 @@ video {
 }
 
 .nav-links a {
-  color: white;
+  color: rgb(0, 166, 255);
   text-decoration: none;
   font-size: 15px;
   font-family: Arial;
-  font-weight: 300;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: #00a6ff;
-  text-shadow: 0 0 10px #00a6ff;
+  color: #ffffff;
+  scale: 1px;
+  text-shadow: 0 0 20px #ffffff;
 }
