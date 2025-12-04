@@ -69,9 +69,9 @@ video {
 .button-1 {
   border: none;
   background: transparent;
-  padding: 0;
+  padding: 1;
   cursor: pointer;
-  outline-offset: 4px;
+  outline-offset: 1px;
   transition: filter 250ms;
   user-select: none;
   -webkit-user-select: none;
@@ -110,12 +110,12 @@ video {
 .button-1-front {
   display: block;
   position: relative;
-  padding: 3px 8px;
+  padding: 3px 5px;
   border-radius: 12px;
   font-style: normal;
   font-weight: bolder;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   color: white;
   background: hsla(232, 83%, 44%, 0.959);
   will-change: transform;
@@ -182,7 +182,7 @@ video {
   border: 0.25em solid var(--glow-color);
   padding: 1em 2em;
   color: var(--glow-color);
-  font-size: 20px;
+  font-size: 15px;
   font-style: bold;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -275,7 +275,7 @@ video {
 /* ================= MENU BAR ================== */
 .navbar {
   width: 100%;
-  height: 70px;
+  height: 50px;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -285,12 +285,12 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 /* ======== LOGO IMAGE STYLE ======== */
 .logo img,
 .logo-img {
-  height: 80px; /* chỉnh kích thước logo */
+  height: 50px; /* chỉnh kích thước logo */
   width: auto;
   object-fit: contain;
   transition: 0.3s;
@@ -303,7 +303,7 @@ video {
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 800;
   color: white;
   letter-spacing: 2px;
@@ -311,22 +311,22 @@ video {
 
 .nav-links {
   display: flex;
-  gap: 20px; /* giảm khoảng cách giữa các nút */
+  gap: 10px; /* giảm khoảng cách giữa các nút */
   list-style: none;
   margin-right: 70px; /* kéo cả group nút sang trái */
 }
 
 .nav-links a {
-  color: rgb(0, 166, 255);
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
   font-family: Arial;
-  font-weight: bold;
+  font-weight: 100;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #00c3ff;
   scale: 1px;
   text-shadow: 0 0 20px #ffffff;
 }
